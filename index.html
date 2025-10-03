@@ -16,46 +16,52 @@
 </head>
 <body>
 
-  <!-- Navbar -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark py-3">
-      <!-- Group 1: Logo -->
-      <div class="navbar-logo">
+      <div class="container-fluid d-flex justify-content-between align-items-center">
+  
+        <!-- Group 1: Logo -->
         <a class="navbar-brand d-flex align-items-center" href="#">
           <img src="assets/logo.svg" alt="Vitanur logo" height="34" class="me-2">
         </a>
-      </div>
-
-        <!-- Mobile toggle -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        
-         <!-- Group 2: Nav links -->
-      <div class="collapse navbar-collapse justify-content-center" id="mainNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Bays</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Leagues</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Fittings</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Gift Card</a></li>
-        </ul>
-      </div>
-
-      <div class="header-actions d-flex align-items-center gap-2">
-        <button class="btn-cart" aria-label="Cart">
-          <img src="assets/shoppingcart.svg" alt="Cart" class="cart-icon" />
-        </button>
-        <button class="btn-call">Call Now</button>
-        <button class="btn btn-primary">Book Now</button>
-      
+  
+        <!-- Group 2: Navigation (center, hidden on mobile) -->
+        <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Bays</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Leagues</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Fittings</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Gift Card</a></li>
+          </ul>
+        </div>
+  
+        <!-- Group 3a: Desktop actions -->
+        <div class="header-actions d-none d-lg-flex align-items-center gap-2">
+          <button class="btn-cart" aria-label="Cart">
+            <img src="assets/shoppingcart.svg" alt="Cart" class="cart-icon" />
+          </button>
+          <button class="btn-call">Call Now</button>
+          <button class="btn btn-primary">Book Now</button>
+        </div>
+  
+        <!-- Group 3b: Mobile cart + toggle -->
+        <div class="d-flex d-lg-none align-items-center gap-2">
+          <button class="btn-cart" aria-label="Cart">
+            <img src="assets/shoppingcart.svg" alt="Cart" class="cart-icon" />
+          </button>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                  aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+  
       </div>
     </nav>
   </header>
+  
 
   <!-- Hero -->
   <main>
