@@ -1,0 +1,168 @@
+:root {
+    --navy: #0b1a36;
+    --navy-2: #0e2746;
+    --accent: #2d5cf6;
+    --muted-white: rgba(255,255,255,0.85);
+    --container-max: 1200px;
+    --font-sans: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html,body { height:100%; font-family: var(--font-sans); }
+  
+  /* ---------------------------
+     NAVBAR
+  ----------------------------*/
+  .navbar {
+    background: transparent; /* overlay style */
+    position: absolute;
+    top: 0; left: 0; width: 100%;
+    z-index: 100;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  
+  .navbar-nav .nav-link {
+    color: var(--muted-white);
+    margin-right: 1rem;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #fff;
+  }
+  
+  /* Cart + Call Now + Book Now buttons */
+  .btn-cart {
+    background: #DDE9FC;
+    border: 2px solid var(--muted-white);
+    color: #fff;
+    width: 36px; height: 36px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    border-radius: 50%;
+  }
+  
+  .btn-call {
+    border: 2px solid var(--muted-white);
+    background: #DDE9FC;
+    color: #2542A8;
+    padding: 0.35rem 1rem;
+    border-radius: 9999px;
+    font-weight: 500;
+  }
+  
+  .btn-call:hover, .btn-cart:hover {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+  }
+  
+  .btn-primary {
+    background: linear-gradient(135deg, var(--accent), #4057f6);
+    border: none;
+    padding: 0.5rem 1.4rem;
+    border-radius: 9999px;
+    font-weight: 600;
+  }
+  
+  /* ---------------------------
+     HERO
+  ----------------------------*/
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    background:
+      linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%);
+    color: white;
+    overflow: hidden;
+    padding-top: 4rem; /* leave room for navbar */
+  }
+  
+  .hero-inner {
+    z-index: 3;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .hero-title {
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-size: clamp(32px, 6vw, 64px);
+    line-height: 1;
+  }
+  
+  .hero-sub {
+    color: #98C3F8;
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    max-width: 64ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Golf hand image */
+  .hero-image {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: none;
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+  
+  /* Rainbow overlay */
+  .hero-rainbow {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: none;
+    z-index: 2;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* General button style (optional reset) */
+.header-buttons a {
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  /* Call Now button */
+  .call-now {
+    background-color: #DDE9FC;
+    color: #2542A8;
+  }
+  
+  /* Shopping Cart button */
+  .shopping-cart {
+    background-color: #DDE9FC;
+    color: #2542A8;
+  }
+  
+  
+  /* Mobile tweaks */
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: clamp(22px, 9vw, 32px);
+    }
+    .hero-sub {
+      font-size: 0.95rem;
+    }
+    .hero-image, .hero-rainbow {
+      width: 140%;
+    }
+  }
+  
