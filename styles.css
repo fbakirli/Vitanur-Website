@@ -71,145 +71,144 @@
     font-weight: 600;
   }
 
-  /* === Hover Dropdowns for Bootstrap === */
-
-/* Show dropdown on hover for large screens only */
-@media (min-width: 992px) {
-  .navbar .dropdown:hover .dropdown-menu {
-    display: block;
-    margin-top: 0; /* removes jump effect */
-  }
-
-  /* Optional: highlight active dropdown link */
-  .navbar .dropdown:hover > .nav-link {
-    color: #fff;
-  }
-}
-
-/* Dropdown menu styling to match dark theme */
-.navbar .dropdown-menu {
-  background-color: rgba(11, 26, 54, 0.95);
-  border: none;
-  border-radius: 10px;
-  padding: 0.5rem 0;
-  transition: all 0.2s ease;
-}
-
-.navbar .dropdown-item {
-  color: rgba(255, 255, 255, 0.85);
-  font-weight: 500;
-  padding: 0.6rem 1.25rem;
-}
-
-.navbar .dropdown-item:hover {
-  background-color: rgba(45, 92, 246, 0.25);
+  
+/* ---------------------------
+   HERO SECTION – Figma layout
+----------------------------*/
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%);
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;      /* text starts from top area */
+  align-items: center;
+  padding-top: 8rem;                /* space for navbar */
+  overflow: hidden;
 }
 
-  
-  /* ---------------------------
-     HERO
-  ----------------------------*/
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    text-align: center;
-    background:
-      linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%);
-    color: white;
-    overflow: hidden;
-    padding-top: 4rem; /* leave room for navbar */
-  }
-  
-  .hero-inner {
-    z-index: 3;
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-  
-  .hero-title {
-    font-weight: 800;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    font-size: clamp(32px, 6vw, 64px);
-    line-height: 1;
-  }
-  
-  .hero-sub {
-    color: #98C3F8;
-    margin-bottom: 1.5rem;
-    font-size: 1.05rem;
-    max-width: 64ch;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  /* Golf hand image */
-  .hero-image {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: none;
-    z-index: 1;
-    pointer-events: none;
-    user-select: none;
-  }
-  
-  /* Rainbow overlay */
-  .hero-rainbow {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: none;
-    z-index: 2;
-    pointer-events: none;
-    user-select: none;
-  }
+/* text container exactly like Figma block */
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 264px;                    /* Figma total block height */
+  gap: 24px;                        /* space between groups */
+  margin-top: 6vh;                  /* visually pushes slightly above center */
+  text-align: center;
+  z-index: 5;                       /* above glove */
+}
 
-  /* General button style (optional reset) */
-.header-buttons a {
-    padding: 10px 20px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
+/* heading */
+.hero-title {
+  width: 827px;                     /* Figma width */
+  height: 180px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;                 /* Black */
+  font-size: 72px;
+  line-height: 90px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+}
+
+/* supporting text */
+.hero-sub {
+  width: 768px;
+  height: 60px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: rgba(152, 195, 248, 1);
+  margin: 0;
+}
+
+/* book-now button stays as component */
+.hero-inner .btn-primary {
+  width: 144px;
+  height: 60px;
+  border-radius: 1000px;
+  border: 1px solid rgba(38,79,207,1);
+  background: linear-gradient(135deg, var(--accent), #4057f6);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.hero-inner .btn-primary:hover {
+  background: linear-gradient(135deg, #3b6bff, #5d83ff);
+}
+
+/* images remain anchored at bottom */
+.hero-image {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: auto;
+  max-width: none;             /* allow it to grow beyond 1781px */
+  min-width: 1781px;           /* keeps it large enough on smaller screens */
+  object-fit: cover;           /* scales nicely if container gets huge */
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+
+.hero-rainbow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: auto;
+  max-width: none;             /* allow scaling on large displays */
+  object-fit: cover;
+  opacity: 0.6;
+  mix-blend-mode: screen;
+  z-index: 2;
+  pointer-events: none;
+  user-select: none;
+}
+
+
+/* Responsive scaling */
+@media (max-width: 991px) {
+  .hero {
+    padding-top: 6rem;
   }
-  
-  /* Call Now button */
-  .call-now {
-    background-color: #DDE9FC;
-    color: #2542A8;
+  .hero-inner {
+    height: auto;
+    margin-top: 2rem;
+    gap: 16px;
+    width: 90%;
   }
-  
-  /* Shopping Cart button */
-  .shopping-cart {
-    background-color: #DDE9FC;
-    color: #2542A8;
+  .hero-title {
+    width: 100%;
+    font-size: clamp(28px, 8vw, 40px);
+    line-height: 1.2;
+    height: auto;
   }
-  
-  
-  /* Mobile tweaks */
-  @media (max-width: 991px) {
-    .btn-call,
-    .btn.btn-primary {
-      display: none !important;
-    }
-    .hero-title {
-      font-size: clamp(22px, 9vw, 32px);
-    }
-    .hero-sub {
-      font-size: 0.95rem;
-    }
-    .hero-image, .hero-rainbow {
-      width: 140%;
-    }
+  .hero-sub {
+    width: 100%;
+    font-size: 16px;
+    line-height: 26px;
+    height: auto;
   }
-  
+  .hero-inner .btn-primary {
+    width: auto;
+    padding: 14px 28px;
+    height: auto;
+  }
+}
