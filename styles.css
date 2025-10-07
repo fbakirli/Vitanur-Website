@@ -70,6 +70,42 @@
     border-radius: 1000px;
     font-weight: 600;
   }
+
+  /* === Hover Dropdowns for Bootstrap === */
+
+/* Show dropdown on hover for large screens only */
+@media (min-width: 992px) {
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* removes jump effect */
+  }
+
+  /* Optional: highlight active dropdown link */
+  .navbar .dropdown:hover > .nav-link {
+    color: #fff;
+  }
+}
+
+/* Dropdown menu styling to match dark theme */
+.navbar .dropdown-menu {
+  background-color: rgba(11, 26, 54, 0.95);
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 0;
+  transition: all 0.2s ease;
+}
+
+.navbar .dropdown-item {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  padding: 0.6rem 1.25rem;
+}
+
+.navbar .dropdown-item:hover {
+  background-color: rgba(45, 92, 246, 0.25);
+  color: #fff;
+}
+
   
   /* ---------------------------
      HERO

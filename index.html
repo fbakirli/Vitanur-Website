@@ -20,35 +20,13 @@
     <nav class="navbar navbar-expand-lg navbar-dark py-3">
       <div class="container-fluid d-flex justify-content-between align-items-center">
   
-        <!-- Group 1: Logo -->
+        <!-- Logo -->
         <a class="navbar-brand d-flex align-items-center" href="#">
           <img src="assets/logo.svg" alt="Vitanur logo" height="34" class="me-2">
         </a>
   
-        <!-- Group 2: Navigation (center, hidden on mobile) -->
-        <div class="collapse navbar-collapse justify-content-center" id="mainNav">
-          <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Bays</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Leagues</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Fittings</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Gift Card</a></li>
-          </ul>
-        </div>
-  
-        <!-- Group 3a: Desktop actions -->
-        <div class="header-actions d-none d-lg-flex align-items-center gap-2">
-          <button class="btn-cart" aria-label="Cart">
-            <img src="assets/shoppingcart.svg" alt="Cart" class="cart-icon" />
-          </button>
-          <button class="btn-call">Call Now</button>
-          <button class="btn btn-primary">Book Now</button>
-        </div>
-  
-        <!-- Group 3b: Mobile cart + toggle -->
-        <div class="d-flex d-lg-none align-items-center gap-2">
+        <!-- Mobile cart + toggler (right) -->
+        <div class="d-flex d-lg-none align-items-center gap-2 ms-auto">
           <button class="btn-cart" aria-label="Cart">
             <img src="assets/shoppingcart.svg" alt="Cart" class="cart-icon" />
           </button>
@@ -58,9 +36,54 @@
           </button>
         </div>
   
+        <!-- Centered nav (inside collapse) -->
+        <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+          <ul class="navbar-nav mx-lg-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+  
+            <!-- Bays dropdown (REPLACES the old plain Bays link) -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="baysDropdown" role="button"
+                 data-bs-toggle="dropdown" aria-expanded="false">Bays</a>
+              <ul class="dropdown-menu" aria-labelledby="baysDropdown">
+                <li><a class="dropdown-item" href="#">Private Bays</a></li>
+                <li><a class="dropdown-item" href="#">Group Bays</a></li>
+                <li><a class="dropdown-item" href="#">VIP Bays</a></li>
+              </ul>
+            </li>
+  
+            <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+  
+            <!-- Services dropdown (REPLACES the old plain Services link) -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
+                 data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+              <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                <li><a class="dropdown-item" href="#">Coaching</a></li>
+                <li><a class="dropdown-item" href="#">Club Repair</a></li>
+                <li><a class="dropdown-item" href="#">Custom Fittings</a></li>
+              </ul>
+            </li>
+  
+            <li class="nav-item"><a class="nav-link" href="#">Leagues</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Fittings</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Gift Card</a></li>
+          </ul>
+        </div>
+  
+        <!-- Desktop actions (right) -->
+        <div class="header-actions d-none d-lg-flex align-items-center gap-2 ms-auto">
+          <button class="btn-cart" aria-label="Cart">
+            <img src="assets/shoppingcart.svg" alt="Cart" class="cart-icon" />
+          </button>
+          <button class="btn-call">Call Now</button>
+          <button class="btn btn-primary">Book Now</button>
+        </div>
+  
       </div>
     </nav>
   </header>
+  
   
 
   <!-- Hero -->
