@@ -72,7 +72,7 @@
 
   
 /* ---------------------------
-   HERO SECTION – Figma layout
+   HERO SECTION – Responsive & Clean
 ----------------------------*/
 .hero {
   position: relative;
@@ -81,63 +81,74 @@
   color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;      /* text starts from top area */
+  justify-content: center;
   align-items: center;
-  padding-top: 8rem;                /* space for navbar */
+  padding-top: 8rem; /* space for navbar */
   overflow: hidden;
+
+
 }
 
-/* text container exactly like Figma block */
+/* ✅ Fix for golf hand scaling properly */
+.hero-image {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  /* responsive scaling */
+  width: 100vw;              /* stretch full width of viewport */
+  height: auto;
+  max-width: none;            /* remove artificial limit */
+  min-width: 1440px;          /* keeps it crisp on smaller large screens */
+  
+  object-fit: cover;          /* ensures smooth scaling */
+  object-position: bottom center;
+  
+  opacity: 1;
+  z-index: 1;
+}
+
+
 .hero-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  height: 264px;                    /* Figma total block height */
-  gap: 24px;                        /* space between groups */
-  margin-top: 6vh;                  /* visually pushes slightly above center */
+  gap: 32px; /* Figma gap */
   text-align: center;
-  z-index: 5;                       /* above glove */
+  z-index: 2;
+  max-width: 827px;
+  padding: 0 16px;
+  margin-top: 6vh;
 }
 
-/* heading */
 .hero-title {
-  width: 827px;                     /* Figma width */
-  height: 180px;
   font-family: 'Inter', sans-serif;
-  font-weight: 900;                 /* Black */
+  font-weight: 900;
   font-size: 72px;
   line-height: 90px;
-  letter-spacing: 0;
   text-transform: uppercase;
   color: #fff;
   margin: 0;
 }
 
-/* supporting text */
 .hero-sub {
-  width: 768px;
-  height: 60px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 30px;
   color: rgba(152, 195, 248, 1);
   margin: 0;
-
 }
 
-/* book-now button stays as component */
 .hero-inner .btn-primary {
-  width: 144px;
+  width: 180px;
   height: 60px;
   border-radius: 1000px;
-  border: 1px solid rgba(38,79,207,1);
   background: linear-gradient(135deg, var(--accent), #4057f6);
-  font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 18px;
-  line-height: 60px;
+  line-height: 24px;
   color: #fff;
   display: inline-flex;
   align-items: center;
@@ -149,31 +160,67 @@
   background: linear-gradient(135deg, #3b6bff, #5d83ff);
 }
 
-.hero-image {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 1781px;
-  height: auto;
-  opacity: 1;
-  z-index: 1;
-}
-
-
-.hero-rainbow {
+/* ✅ rainbow overlay effect (optional) */
+.hero::after {
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
   max-width: 1440px;
-  height: auto;
-  opacity: 0.6;
+  height: 100%;
+  background-image: url("assets/rainbow.png");
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: contain;
   mix-blend-mode: screen;
-  z-index: 2;
+  opacity: 0.6;
+  z-index: 1;
 }
+
+/* ---------------------------
+   MOBILE (≤600px)
+----------------------------*/
+@media (max-width: 600px) {
+  .hero {
+    background-size: contain; /* fits the golf hand proportionally */
+    background-position: bottom center;
+    padding-top: 6rem;
+    min-height: 812px; /* matches Figma */
+  }
+
+  .hero-inner {
+    align-items: flex-start;
+    text-align: left;
+    gap: 32px; /* overall group gap */
+    padding: 0 16px;
+    max-width: 343px;
+    margin-top: 2rem;
+  }
+
+  .hero-title {
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 0;
+  }
+
+  .hero-inner .btn-primary {
+    width: 100%;
+    max-width: 343px;
+    height: 56px;
+    border: 1px solid rgba(38,79,207,1);
+    font-size: 16px;
+    margin-top: 0;
+  }
+}
+
 
 
 /* ---------------------------
@@ -1361,71 +1408,6 @@
 
   
 
-/* Small mobile (≤600px) — HERO SECTION */
-@media (max-width: 600px) {
-  .hero-image {
-    height: 50%;
-    width: auto;
-    bottom: 0;
-    gap: 0;
-  }
-
-  .hero-inner {
-    width: 100%;
-    max-width: 375px;         /* matches Figma frame width */
-    padding-left: 16px;       /* inner padding */
-    padding-right: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;  /* left align text and button */
-    justify-content: flex-start;
-    gap: 16px;                /* spacing between title, text, button */
-    text-align: left;
-    z-index: 5;
-    margin-top: 2rem;         /* below navbar */
-  }
-
-  .hero-title {
-    width: 343px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 900;
-    font-size: 36px;
-    line-height: 44px;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    color: #fff;
-    margin: 0 0 6px 0 !important;
-  }
-
-  .hero-sub {
-    width: 343px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 28px;
-    margin: 0 0 14px 0 !important;
-  }
-
-  .hero-inner .btn-primary {
-    width: 100%;
-    max-width: 343px;
-    height: 56px;
-    border-radius: 1000px;
-    border: 1px solid rgba(38,79,207,1);
-    background: linear-gradient(135deg, var(--accent), #4057f6);
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 24px;
-    color: #fff;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 0 !important;
-    margin-bottom: 0;
-  }
-}
 
 /* =========================
    FAQ SECTION
