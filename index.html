@@ -106,5 +106,435 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Your video control script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const shell = document.getElementById('trackmanVideoShell');
+      const video = document.getElementById('trackmanVideo');
+      const btn = document.getElementById('trackmanPlayBtn');
+  
+      if (!shell || !video || !btn) return;
+  
+      // Pause immediately after first frame loads
+      video.addEventListener('loadeddata', () => video.pause());
+  
+      // When clicking the overlay button
+      btn.addEventListener('click', () => {
+        video.play();
+      });
+  
+      // Allow clicking video itself to pause/play
+      video.addEventListener('click', () => {
+        if (video.paused) video.play();
+        else video.pause();
+      });
+  
+      // Class updates
+      video.addEventListener('play', () => {
+        shell.classList.add('is-playing');
+        shell.classList.remove('is-paused');
+      });
+  
+      video.addEventListener('pause', () => {
+        shell.classList.remove('is-playing');
+        shell.classList.add('is-paused');
+      });
+    });
+  </script>
+  
+
+  
+
+  
+
+
+
+<section class="features">
+  <div class="features-container">
+
+    <!-- Left side -->
+    <div class="features-left">
+      <h2 class="features-title">MEET THE TRACKMAN TECHNOLOGY</h2>
+      <p class="features-desc">
+        Untitled are a commercial interior design studio. We specialise in customised office design,
+        restaurant design, shop design, and studio design.
+      </p>
+      <img src="assets/trackman-logo.png" alt="Trackman Logo" class="trackman-logo">
+    </div>
+
+    <!-- Right side -->
+    <div class="features-right">
+      <div class="feature-item">
+        <div class="feature-icon">
+          <img src="assets/chat.svg" alt="New Generation Icon">
+        </div>
+        <div class="feature-text">
+          <h3 class="feature-title">THE NEW GENERATION</h3>
+          <p class="feature-desc">
+            One ultra high frequency radar tracks everything the club does, before, during, and after impact –
+            from Club Path and Face Angle to Spin Loft and Attack Angle. The other high frequency radar tracks
+            the ball – from launch to landing and everything in between, including Spin Rate and Curvature.
+          </p>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-icon">
+          <img src="assets/lightning.svg" alt="Data Quality Icon">
+        </div>
+        <div class="feature-text">
+          <h3 class="feature-title">UNMATCHED DATA QUALITY AT YOUR FINGERTIPS</h3>
+          <p class="feature-desc">
+            The Dual Radar Technology enables even more data to be captured, in particular at the moment of impact,
+            where the quality data is significantly superior as compared to Single Radar Technology.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="feature-video">
+  <div class="video-shell" id="trackmanVideoShell">
+    <video
+      id="trackmanVideo"
+      class="video"
+      src="assets/trackman.mp4"
+      poster="assets/trackman-poster.jpg"
+      preload="metadata"
+    ></video>
+
+    <!-- Play button overlay -->
+    <button class="video-play" id="trackmanPlayBtn" aria-label="Play video">
+      <span class="play-circle"></span>
+      <span class="play-triangle"></span>
+    </button>
+  </div>
+</section>
+
+
+<!-- =========================
+     SECTION DIVIDER
+========================= -->
+<div class="section-divider"></div>
+
+<!-- =========================
+     OUR BAYS SECTION
+========================= -->
+<section class="bays">
+  <div class="bays-container">
+
+    <!-- Heading + Subtext -->
+    <div class="bays-header">
+      <div class="bays-header-inner">
+        <h2 class="bays-title">OUR BAYS</h2>
+        <p class="bays-subtitle">
+          Hear from some of our amazing customers who are building faster.
+        </p>
+      </div>
+    </div>
+
+    <!-- Row of Bay Cards -->
+    <div class="bays-row">
+
+      <!-- Bay 1 -->
+      <div class="bay-card">
+        <img src="assets/bay1.png" alt="Bay 1" class="bay-image">
+        <div class="bay-overlay">
+          <div class="bay-info">
+            <h3 class="bay-name">Bay I</h3>
+            <p class="bay-desc">
+              Untitled are a commercial interior design studio. We specialise in customised office design...
+            </p>
+            <a href="#" class="bay-button">
+              <span>More Information</span>
+              <img src="assets/arrow-narrow-up-right.svg" alt="Arrow icon">
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bay 2 -->
+      <div class="bay-card">
+        <img src="assets/bay1.png" alt="Bay 2" class="bay-image">
+        <div class="bay-overlay">
+          <div class="bay-info">
+            <h3 class="bay-name">Bay II</h3>
+            <p class="bay-desc">
+              Untitled are a commercial interior design studio. We specialise in customised office design...
+            </p>
+            <a href="#" class="bay-button">
+              <span>More Information</span>
+              <img src="assets/arrow-narrow-up-right.svg" alt="Arrow icon">
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     SECTION DIVIDER
+========================= -->
+<div class="section-divider"></div>
+
+<!-- =========================
+     CTA SECTION – Join Our Lessons Today
+========================= -->
+<section class="cta">
+  <div class="cta-container">
+    
+    <!-- LEFT CONTENT -->
+    <div class="cta-content">
+      <div class="cta-textblock">
+        <h2 class="cta-title">JOIN OUR LESSONS TODAY</h2>
+        <p class="cta-subtext">
+          Untitled really understood the paired-back aesthetic that we were looking for.
+          We couldn’t be happier with our new offices.
+        </p>
+      </div>
+
+      <!-- Check items -->
+      <ul class="cta-checklist">
+        <li class="check-item">
+          <div class="check-icon">
+            <img src="assets/check-icon.svg" alt="Checkmark">
+          </div>
+          <p class="check-text">30-day free trial</p>
+        </li>
+        <li class="check-item">
+          <div class="check-icon">
+            <img src="assets/check-icon.svg" alt="Checkmark">
+          </div>
+          <p class="check-text">Personalized onboarding</p>
+        </li>
+        <li class="check-item">
+          <div class="check-icon">
+            <img src="assets/check-icon.svg" alt="Checkmark">
+          </div>
+          <p class="check-text">Access to all features</p>
+        </li>
+      </ul>
+
+      <!-- Action button -->
+      <div class="cta-actions">
+        <a href="#" class="cta-btn">Get started</a>
+      </div>
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="cta-image">
+      <img src="assets/cta-lessons.jpg" alt="Golf lessons" />
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- =========================
+     TESTIMONIAL SECTION
+========================= -->
+<section class="testimonial">
+  <div class="testimonial-container">
+    
+    <div class="testimonial-content">
+      <!-- Quote + Attribution -->
+      <div class="quote-block">
+        <div class="stars">
+          <span class="star"></span>
+          <span class="star"></span>
+          <span class="star"></span>
+          <span class="star"></span>
+          <span class="star"></span>
+        </div>
+
+        <p class="quote">
+          Love the simplicity of the service<br>
+          and the prompt customer support.<br>
+          We can’t imagine working without it.
+        </p>
+
+        <div class="author">
+          <p class="author-name">— Renee Wells</p>
+          <p class="author-role">Golf Player</p>
+        </div>
+
+        <!-- Pagination dots -->
+        <div class="dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+
+      <!-- Image + Play button -->
+      <div class="testimonial-image">
+        <img src="assets/testimonial-img.jpg" alt="Testimonial video preview">
+        <button class="video-play">
+          <span class="play-circle"></span>
+          <span class="play-triangle"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================
+     CTA SECTION – Step Onto The Digital Green
+========================= -->
+<section class="cta-green">
+  <div class="cta-green-container">
+
+    <!-- Left image -->
+    <div class="cta-green-image">
+      <img src="assets/cta-golf-player.jpg" alt="Golfer" />
+    </div>
+
+    <!-- Right content -->
+    <div class="cta-green-content">
+      <div class="cta-green-inner">
+
+        <div class="cta-green-text">
+          <h2 class="cta-green-title">STEP ONTO THE DIGITAL GREEN WITH US</h2>
+          <p class="cta-green-subtext">
+            Untitled really understood the paired-back aesthetic that we were looking for.
+            We couldn’t be happier with our new offices.
+          </p>
+        </div>
+
+        <div class="cta-green-actions">
+          <a href="#" class="cta-btn cta-btn-gray">Call us</a>
+          <a href="#" class="cta-btn cta-btn-blue">Book Now</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- =========================
+     FAQ SECTION
+========================= -->
+<section class="faq">
+  <div class="faq-container">
+
+    <!-- Header -->
+    <div class="faq-header">
+      <div class="faq-header-inner">
+        <h2 class="faq-title">FREQUENTLY ASKED QUESTIONS</h2>
+        <p class="faq-subtitle">
+          Everything you need to know about the product and billing.
+        </p>
+      </div>
+    </div>
+
+    <!-- Accordion -->
+    <div class="faq-content">
+      <div class="faq-inner">
+
+        <!-- FAQ Item 1 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-icon"></span>
+            <span class="faq-text">Is there a free trial available?</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free,
+              personalized 30-minute onboarding call to get you up and running as soon as possible.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-icon"></span>
+            <span class="faq-text">Can I change my plan later?</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Absolutely. You can upgrade or downgrade your plan at any time directly from your dashboard.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-icon"></span>
+            <span class="faq-text">What is your cancellation policy?</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              You can cancel anytime with no hidden fees. Your account will remain active until the end of your billing period.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-icon"></span>
+            <span class="faq-text">Can other info be added to an invoice?</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes, additional information can be added through your billing settings before generating your next invoice.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-icon"></span>
+            <span class="faq-text">How does billing work?</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              We bill monthly or annually depending on your plan. You can manage payment details anytime through your account settings.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 6 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-icon"></span>
+            <span class="faq-text">How do I change my account email?</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              You can change your email from your profile settings. We’ll send a confirmation link to verify the new address.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <script>
+    document.querySelectorAll(".faq-item").forEach((item) => {
+      const question = item.querySelector(".faq-question");
+      question.addEventListener("click", () => {
+        const isActive = item.classList.contains("active");
+        document.querySelectorAll(".faq-item").forEach((el) => el.classList.remove("active"));
+        if (!isActive) item.classList.add("active");
+      });
+    });
+  </script>
+
 </body>
 </html>
